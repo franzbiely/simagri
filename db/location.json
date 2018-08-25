@@ -5,7 +5,13 @@
 			"sections" : [
 				{
 					"name" : "Section 1",
-					"image" : "./img/map1/sec-1.jpg",
+					"image" : "./img/map1/sec-1.png",
+					"image_prop" : {
+						"h": 120,
+						"w": 461,
+						"x": 292,
+						"y": 132
+					},
 					"soil_type" : "peaty",
 					"acidity_type" : 1,
 					"acidity_level" : "5m",
@@ -16,7 +22,13 @@
 				},
 				{
 					"name" : "Section 2",
-					"image" : "./img/map1/sec-2.jpg",
+					"image" : "./img/map1/sec-2.png",
+					"image_prop" : {
+						"h": 115,
+						"w": 468,
+						"x": 292,
+						"y": 267
+					},
 					"soil_type" : "lomey",
 					"acidity_type" : 2,
 					"acidity_level" : "10m",
@@ -27,7 +39,13 @@
 				},
 				{
 					"name" : "Section 3",
-					"image" : "./img/map1/sec-3.jpg",
+					"image" : "./img/map1/sec-3.png",
+					"image_prop" : {
+						"h": 180,
+						"w": 517,
+						"x": 118,
+						"y": 519
+					},
 					"soil_type" : "sandy",
 					"acidity_type" : 3,
 					"acidity_level" : "5m",
@@ -43,7 +61,7 @@
 			"sections" : [
 				{
 					"name" : "Section 1",
-					"image" : "./img/map2/sec-1.jpg",
+					"image" : "./img/map2/sec-1.png",
 					"soil_type" : "chalky",
 					"acidity_type" : "non acidic",
 					"acidity_level" : "14m",
@@ -54,7 +72,7 @@
 				},
 				{
 					"name" : "Section 2",
-					"image" : "./img/map2/sec-2.jpg",
+					"image" : "./img/map2/sec-2.png",
 					"soil_type" : "clay",
 					"acidity_type" : "very acidic",
 					"acidity_level" : "20m",
@@ -65,7 +83,7 @@
 				},
 				{
 					"name" : "Section 3",
-					"image" : "./img/map2/sec-3.jpg",
+					"image" : "./img/map2/sec-3.png",
 					"soil_type" : "silky",
 					"acidity_type" : "acidic",
 					"acidity_level" : "15m",
@@ -76,7 +94,7 @@
 				},
 				{
 					"name" : "Section 4",
-					"image" : "./img/map2/sec-4.jpg",
+					"image" : "./img/map2/sec-4.png",
 					"soil_type" : "peaty",
 					"acidity_type" : "non acidic",
 					"acidity_level" : "17m",
