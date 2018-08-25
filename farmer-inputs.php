@@ -9,8 +9,8 @@
 			<p> Please choose your farm location.</p>
 			<select >
 				<option>[Please select]</option>
-				<option value='tugbok-davao'>Tugbok Davao</option>
-				<option value='manambulan-davao'>Manambulan Davao</option>
+				<option value='davao'>Davao</option>
+				<option value='cebu'>Cebu</option>
 			</select>
 			<br />
 			<button>Enter</button>
@@ -19,6 +19,7 @@
 </body>
 <script src="./js/jquery.js"></script>
 <script src="./js/progress.js"></script>
+<script src="./js/phase.js"></script>
 <script>
 $('button').on('click',function() {
 	var tasks = {
@@ -40,7 +41,7 @@ $('button').on('click',function() {
 				setTimeout(function() {
 					Phase.out()
 					window.location.href='./maps.php';
-				},500)			
+				},1000)			
 			}
 		}
 	}
