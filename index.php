@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="./css/global.css" />
 <link rel="stylesheet" href="./css/layout.css" />
+<link rel="stylesheet" href="./css/progress.css" />
 <style>
 	.index {
 		background: url(./img/splash.jpg) center;
@@ -30,3 +31,36 @@
 	</div>
 </body>
 <script src="./js/jquery.js"></script>
+<script src="./js/progress.js"></script>
+<script src="./js/phase.js"></script>
+<script>
+$('button').on('click',function() {
+	var tasks = {
+		1 : {
+			title : 'Fetching Data',
+			func : function(){
+				console.log('fetching');
+			}
+		},
+		2 : {
+			title : 'Rendering',
+			func : function(){
+				console.log('Rendering');
+			}
+		},
+		3 : {
+			title : 'Ready',
+			func : function() {
+				setTimeout(function() {
+					Phase.out()
+				},1000)			
+			}
+		}
+	}
+	ProgressBar.render(tasks)
+	
+	// window.history.pushState("", "", '/farmer-details');
+
+
+})
+</script>

@@ -1,0 +1,11 @@
+#progress {
+	width: 100%;
+    background-color: grey;
+    position: absolute;
+}
+#progress .bar {
+	width: 1%;
+    height: 30px;
+    background-color: green;
+    transition:all 0.5s linear;
+}

@@ -1,0 +1,35 @@
+/*
+	Location 1
+	Location 2
+	Location 3
+		Map Section 1
+		Map Section 2
+		Map Section 3
+			soil_type = {peaty, lomey, sandy, chalky, clay, silky},
+			acidity_type = {
+				1 : non acidic,
+				2 : acidic,
+				3 : very acidic
+			},
+			acidity_level = {meters}
+			elevation = {meters},
+			slope = {very steep, Undulating to ruling, rolling to moderately steep, gendly sloping to undulating, level to nearly level, steep,},
+			moisture = {
+				very dry
+				dry
+				wet
+				very wet
+			},
+			humidity = {
+				low,
+				high
+			}
+			
+
+
+
+
+*/
+{
+
+}
