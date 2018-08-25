@@ -36,8 +36,9 @@
 </body>
 <script src="./js/jquery.js"></script>
 <script>
+let loc;
 $.get('./db/location.json', function(data) {
-	let loc = new URL(window.location.href).searchParams.get('loc');
+	loc = new URL(window.location.href).searchParams.get('loc');
 	console.log(data[loc]);
 	Object.keys(data[loc]).map(function(name) {
 		$('#maps').prepend('<div><img class="map" data="'+name+'" src="'+data[loc][name].image+'" /><br /><small>'+name.toUpperCase()+', Davao</small></div>')
@@ -45,6 +46,6 @@ $.get('./db/location.json', function(data) {
 })
 
 $(document).on('click','.map',function() {
-	window.location.href='./map-details.php?loc='+$(this).attr('data');
+	window.location.href='./map-details.php?loc='+loc+'&subloc='+$(this).attr('data');
 });
 </script>
