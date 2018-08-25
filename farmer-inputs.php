@@ -26,7 +26,6 @@ $.get('./db/location.json', function(data) {
 	Object.keys(data).map(function(name) {
 		$('select').append('<option value="'+name+'">'+name.toUpperCase()+'</option>')
 	})
-	
 })
 
 $('button').on('click',function() {
@@ -52,7 +51,7 @@ $('button').on('click',function() {
 				else {
 					setTimeout(function() {
 						// Phase.out()
-						window.location.href='./maps.php?'+selected_area;
+						window.location.href='./maps.php?loc='+$('select').find(":selected").val();
 					},1000)				
 				}
 				

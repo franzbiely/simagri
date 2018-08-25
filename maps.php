@@ -28,14 +28,6 @@
 		<div class="row">
 			<p>Choose Maps</p>
 			<div id="maps" class="clearfix">
-				<div>
-					<img class="map" data='map-1' src="./img/map1/map.jpg" /><br />
-					<small>Tugbok, Davao</small>
-				</div>
-				<div>
-					<img class="map" data='map-2' src="./img/map2/map.jpg" /><br />
-					<small>Manambulan, Davao</small>
-				</div>
 				<div class="clear:both"></div>
 			</div><br /><br /><br />
 			<small>Location not listed? <a href="mailto:request@simagri.ph">Request a location to map</a></small>
@@ -44,7 +36,15 @@
 </body>
 <script src="./js/jquery.js"></script>
 <script>
-$('.map').on('click',function() {
+$.get('./db/location.json', function(data) {
+	let loc = new URL(window.location.href).searchParams.get('loc');
+	console.log(data[loc]);
+	Object.keys(data[loc]).map(function(name) {
+		$('#maps').prepend('<div><img class="map" data="'+name+'" src="'+data[loc][name].image+'" /><br /><small>'+name.toUpperCase()+', Davao</small></div>')
+	})
+})
+
+$(document).on('click','.map',function() {
 	window.location.href='./map-details.php?loc='+$(this).attr('data');
 });
 </script>
