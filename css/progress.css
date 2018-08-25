@@ -1,7 +1,8 @@
 #progress {
 	width: 100%;
     background-color: grey;
-    position: absolute;
+    position: fixed;
+    top: 0;
 }
 #progress .bar {
 	width: 1%;
