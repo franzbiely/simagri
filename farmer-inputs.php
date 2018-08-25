@@ -2,16 +2,31 @@
 <link rel="stylesheet" href="./css/layout.css" />
 <link rel="stylesheet" href="./css/inputs.css" />
 <link rel="stylesheet" href="./css/progress.css" />
+<style>
+.farmer-inputs {
+	background: url('./img/page2.jpg') center;
+	background-size: cover;
+}
+.farmer-inputs .box {
+	background: rgba(255,255,255,0.8);
+	border: 1px solid #000;
+	border-radius:10px;
+	box-shadow: 5px 5px 10px #000;
+	padding: 20px;
+}
+</style>
 <body>
 	<div class="farmer-inputs flex-container">
 		<div class="row">
-			<h3>Hey Farmer!</h3>
-			<p> Please choose your farm location.</p>
-			<select>
-				<option>[Please select]</option>
-			</select>
-			<br />
-			<button>Enter</button>
+			<div class="box">
+				<h3>Hey Farmer!</h3>
+				<p> Please choose your farm location.</p>
+				<select>
+					<option>[Please select]</option>
+				</select>
+				<br />
+				<button>Enter</button>
+			</div>
 		</div>
 	</div>
 </body>
