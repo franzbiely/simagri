@@ -1,0 +1,26 @@
+{ 
+    "urea":{
+        "class" : "granules",
+        "price": 1022.66, 
+        "quantity": 50000, 
+        "unit" : "grams"
+    },
+    "complete":{
+        "price": 1110.25, 
+        "class" : "granules",
+        "quantity": 50000, 
+        "unit" : "grams"
+    }, 
+    "ammosul":{
+        "price": 600.03, 
+        "class" : "granules",
+        "quantity": 50000, 
+        "unit" : "grams"
+    }, 
+    "ammophos":{
+        "price": 938.62, 
+        "class" : "granules",
+        "quantity": 50000, 
+        "unit" : "grams"
+    }
+}
