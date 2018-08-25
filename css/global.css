@@ -10,10 +10,14 @@ html {
 body * {
 	transition: all 1s linear;
 	opacity:1;
+	font-family: Avenir;
+	  -webkit-text-size-adjust: 100%;
+	  -webkit-font-smoothing: antialiased;
 }
 
 
-button {
+button,
+input[type="submit"] {
 	cursor:pointer;
 	padding: 10px 15px;
 	font-size: 1rem;

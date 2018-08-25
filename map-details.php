@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="./css/layout.css" />
 <link rel="stylesheet" href="./css/progress.css" />
 <link rel="stylesheet" href="./css/modal.css" />
+<link rel="stylesheet" href="./css/inputs.css" />
 <style>
 .map-details {
 	height: 100%;
@@ -16,6 +17,22 @@
 }
 .map-section:hover {
 	opacity: 1;
+}
+#modal .float-right {
+	border-left: 1px solid #eee;
+	width:300px;
+	text-align: left;
+    font-size: 15px;
+    font-style: italic;
+}
+input[type="number"] {
+	width:150px;
+	margin-top:0;
+	margin-right: 10px;
+}
+button {
+	float: right;
+	width: 100px;
 }
 </style>
 <body>
@@ -74,13 +91,22 @@ $.get('./db/location.json', function(data) {
 							title : 'Area Details',
 							body : '<div class="row">'+
 								'<img style="float:left;" with="150" src="' + area_details.image + '" />'+
-								'<p>Soil Type  : <span>'+ area_details.soil_type +'</span></p>'+
-								'<p>Acidity Type  : <span>'+ area_details.acidity_type +'</span></p>'+
-								'<p>Acidity Level  : <span>'+ area_details.acidity_level +'</span></p>'+
-								'<p>Elevation  : <span>'+ area_details.elevation +'</span></p>'+
-								'<p>Slope  : <span>'+ area_details.slope +'</span></p>'+
-								'<p>Moisture  : <span>'+ area_details.moisture +'</span></p>'+
-								'<p>Humidity  : <span>'+ area_details.humidity +'</span></p>'+
+								'<div class="float-right">'+
+									'<p>Soil Type  : <span>'+ area_details.soil_type +'</span></p>'+
+									'<p>Acidity Type  : <span>'+ area_details.acidity_type +'</span></p>'+
+									'<p>Acidity Level  : <span>'+ area_details.acidity_level +'</span></p>'+
+									'<p>Elevation  : <span>'+ area_details.elevation +'</span></p>'+
+									'<p>Slope  : <span>'+ area_details.slope +'</span></p>'+
+									'<p>Moisture  : <span>'+ area_details.moisture +'</span></p>'+
+									'<p>Humidity  : <span>'+ area_details.humidity +'</span></p>'+
+									'<hr />'+
+									'<p>Please enter your area size in hectar : </p>'+
+									'<form method="POST" action="./plant_selection.php">'+
+									'<input type="hidden" name="soil_type" value="'+area_details.soil_type+'" />'+
+									'<input required type="number" name="area_size" />'+
+									'<input type="submit" value="Analyze" />'+
+									'</form>'+
+								'</div>'+
 							'</div>'
 						}
 						var modal = new Modal(arg);
