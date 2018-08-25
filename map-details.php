@@ -56,7 +56,8 @@ $.get('./db/location.json', function(data) {
 						if(val.name == $(_this).attr('name')) {
 							return val;
 						}
-					})
+					})[0]
+					console.log(area_details)
 				}
 			},
 			2 : {
@@ -70,25 +71,17 @@ $.get('./db/location.json', function(data) {
 				func : function() {
 					setTimeout(function() {
 						let arg = {
-							title : 'Test HEader',
+							title : 'Area Details',
 							body : '<div class="row">'+
-							'<div class="float-left">'+
-								'<p>Soil Type : <span>1</span></p>'+
-								'<p>Soil Type : <span>1</span></p>'+
-								'<p>Soil Type : <span>1</span></p>'+
-								'<p>Soil Type : <span>1</span></p>'+
-								'<p>Soil Type : <span>1</span></p>'+
-								'<p>Soil Type : <span>1</span></p>'+
-							'</div>'+
-							'<div class="float-right">'+
-								'<p>Soil Type : <span>1</span></p>'+
-								'<p>Soil Type : <span>1</span></p>'+
-								'<p>Soil Type : <span>1</span></p>'+
-								'<p>Soil Type : <span>1</span></p>'+
-								'<p>Soil Type : <span>1</span></p>'+
-								'<p>Soil Type : <span>1</span></p>'+
-							'</div>'+
-						'</div>'
+								'<img style="float:left;" with="150" src="' + area_details.image + '" />'+
+								'<p>Soil Type  : <span>'+ area_details.soil_type +'</span></p>'+
+								'<p>Acidity Type  : <span>'+ area_details.acidity_type +'</span></p>'+
+								'<p>Acidity Level  : <span>'+ area_details.acidity_level +'</span></p>'+
+								'<p>Elevation  : <span>'+ area_details.elevation +'</span></p>'+
+								'<p>Slope  : <span>'+ area_details.slope +'</span></p>'+
+								'<p>Moisture  : <span>'+ area_details.moisture +'</span></p>'+
+								'<p>Humidity  : <span>'+ area_details.humidity +'</span></p>'+
+							'</div>'
 						}
 						var modal = new Modal(arg);
 					},1000)			
