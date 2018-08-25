@@ -1,0 +1,16 @@
+{
+      "crop": "Banana"
+    , "yield": "[to_be_added]"
+    , "arable_area": "1 Hectare"
+    , "soil_type": "Nuetral"
+    , "crops_count": 100
+    , "days_to_harvest": 77
+    , "fertilizers":
+        [   
+            { 
+                "name"          : "urea"
+              , "quantity"      : 5
+              , "frequency_span"     : 7
+            }
+        ]                     
+}
