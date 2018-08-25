@@ -14,3 +14,17 @@
     width: auto;
     text-align: center;
 }
+
+.result{
+    border: solid 1px #333;
+    margin: 20px 400px;
+}
+.table{
+    margin: auto;
+    width: 100%;
+}
+
+.field{
+    font-weight: bold;
+    text-align: right
+}
