@@ -13,7 +13,6 @@
 <style>
 	h1 {
 		margin-bottom: 0;
-		text-shadow: 2px 2px 1px #fff;
 	}
 	p {
     text-shadow: 1px 1px 0px #fff;
@@ -22,6 +21,9 @@
 	.result{
 		display:none;
 	}
+	.sub{
+		font-style: italic;
+	}
 </style>
 <body>
 	<div class="selection container">
@@ -29,47 +31,23 @@
 			<h1>Plant Selection</h1>
 		</div>
 		<div class="info row">
-			<p>Location:</p>
-			<p>Soil type:</p>
+			<p>Land Area: <span><?php echo $_REQUEST["area_size"] ?> Hectare(s)</span></p>
+			<p>Soil type: <span><?php echo $_REQUEST["soil_type"] ?></span></p>
 		</div>
 		<div class="input-group row">
 			<p>
 				<label for="crop-list">Suggested Crop List</label>
 				<select class="crop-list" id="crop-list">
 					<option>---SELECT---</option>
-					<option>Mango</option>
-					<option>Banana</option>
 				</select>
 			</p>
 		</div>
 		<div class="result row">
-			<table class="table crop_data">
-				<tr>
-					<td class="field">Suggested Planting Months:</td>
-					<td><span class="value">March to April</span></td>
-				</tr>
-				<tr>
-					<td class="field">Estimated number of crops:</td>
-					<td><span class="value">65 trees</span></td>
-				</tr>
-				<tr>
-					<td class="field">Gap between plantation:</td>
-					<td><span class="value">2m-3m</span></td>
-				</tr>
-				<tr>
-					<td class="field">Flower Induction Months:</td>
-					<td><span class="value">March to April</span></td>
-				</tr>
-				<tr>
-					<td class="field">Growing Fertilizer:</td>
-					<td><span class="value">Urea Apply once a month every month until supplies last</span></td>
-				</tr>
-				<tr>
-					<td class="field">Estimated Yield:</td>
-					<td><span class="value">100kg-200kg/tree</span></td>
-				</tr>
-			</table>
-			<button>Create Summary</button>
+			<form action="./summary.php">
+				<table class="table crop_data">
+				</table>
+				<input type="submit" value="Create Summary">
+			</form>
 		</div>
 	</div>
 </body>
@@ -77,38 +55,82 @@
 <script src="./js/progress.js"></script>
 <script src="./js/phase.js"></script>
 <script>
-$('button').on('click',function() {
-    var tasks = {
-        1 : {
-            title : 'Fetching Data',
-			func : function(){
-                console.log('fetching');
-            }
-		},
-		2 : {
-            title : 'Rendering',
-			func : function(){
-                console.log('Rendering');
-            }
-		},
-		3 : {
-            title : 'Ready',
-			func : function() {
-                setTimeout(function() {
-                    Phase.out()
-				},1000)
+$(document).ready(function(){
+	var plants;
+	var x = <?php echo $_REQUEST["area_size"]?> * 10000;
+	$.getJSON( "db/plants.json", function( data ) {
+		var options = "";
+		plants = data;
+		$.each( data, function( key, val ) {
+			if(val.soil == "<?php echo $_REQUEST["soil_type"];?>")
+				options +="<option value='"+key+"' >"+key+"</option>";
+		});
+		$("#crop-list").append(options);
+
+	});
+	$(".crop-list").on("change", function(e){
+		var tasks = {
+			1 : {
+				title : 'Fetching Data',
+				func : function(){
+					console.log('fetching');
+				}
+			},
+			2 : {
+				title : 'Rendering',
+				func : function(){
+					console.log('Rendering');
+				}
+			},
+			3 : {
+				title : 'Ready',
+				func : function() {
+					setTimeout(function() {
+						key = $(".crop-list").val();
+						tds = ""
+						$.each( plants[key]["details"], function (index, value){
+							tds += "<tr>"+
+								"<td class='field'>"+index+":</td>";
+
+							if($.type(value) === "object" ){
+								tds +=	"<td></td>"+
+									"</tr>";
+								$.each(value, function (i, o){
+
+									tds += "<tr>"+
+										"<td class='field sub'>"+i+":</td>"+
+										"<td>"+o+"</td>"+
+										"<input type='hidden' name='"+ i.replace(" ","_").toLowerCase()+"' value='"+o+"'>"+
+										"</tr>"	;
+								});
+							}else{
+								if(index == "estimated plant count"){
+									tds +=	"<td><span class='value'>"+eval(value)+"</span>";
+								}
+								else{
+									tds +=	"<td><span class='value'>"+value+"</span>";
+								}
+
+							tds +="<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"' value='"+value+"'></td>"+
+								"</tr>";
+
+
+							}
+
+							$(".crop_data").html(tds);
+
+
+						});
+
+						$(".result").stop().fadeOut("slow").fadeIn("slow");
+					},1000)
+					Phase.out();
+				}
 			}
 		}
-	}
-	ProgressBar.render(tasks)
+		ProgressBar.render(tasks)
 
-	// window.history.pushState("", "", '/farmer-details');
-
-
-});
-
-$(".crop-list").on("change", function(e){
-	$(".result").stop().fadeOut("slow").fadeIn("slow");
+	});
 });
 
 </script>

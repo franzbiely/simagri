@@ -6,9 +6,9 @@
       "terrain":"Drainable",
       "Planting season": "Anytime",
       "spacing":"10m - 15m",
-      "estimated plant count": "area / 100",
+      "estimated plant count": "x / 100",
       "Fruit Bearing Age":{
-        "chemical assisted": "as early as 5 years",
+        "Chemical assisted": "as early as 5 years",
         "Organic": "as early as 7 years"
       },
       "estimated_yield_per_tree":"1500 - 2000 pcs/tree",
@@ -28,7 +28,7 @@
       "terrain":"Drainable",
       "Planting season": "Anytime",
       "spacing":"4m",
-      "estimated plant count": "(area-20%) / 16",
+      "estimated plant count": "(x-(x*.2)) / 16",
       "Production Age":"9 months from planting",
       "estimated yield per tree":"9-11 hands(22-24kg)",
       "fertilizer":{
