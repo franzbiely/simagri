@@ -8,6 +8,7 @@ var Modal = function(arg) {
 
 		let btnclose = document.createElement('span');
 		btnclose.setAttribute('id','modal-close');
+		btnclose.addEventListener('click',closeMe);
 		btnclose.innerHTML = 'x';
 
 		let header = document.createElement('div');
@@ -27,5 +28,12 @@ var Modal = function(arg) {
 			container.setAttribute('class','loaded');
 		},1000)		
 	} render();
+	function closeMe(){
+		modal.classList.remove('loaded');
+		setTimeout(function() {
+			modal.parentNode.removeChild(modal);
+		},500)	
+		
+	}
 	return ModalObj;
 }
