@@ -1,0 +1,94 @@
+{
+	"davao" : {
+		"tugbok" : {
+			"image" : "./img/map1/map.jpg",
+			"sections" : [
+				{
+					"name" : "Section 1",
+					"image" : "./img/map1/sec-1.jpg",
+					"soil_type" : "peaty",
+					"acidity_type" : 1,
+					"acidity_level" : "5m",
+					"elevation" : "10m",
+					"slope" : "very-steep",
+					"moisture" : "very-dry",
+					"humidity" : "low"
+				},
+				{
+					"name" : "Section 2",
+					"image" : "./img/map1/sec-2.jpg",
+					"soil_type" : "lomey",
+					"acidity_type" : 2,
+					"acidity_level" : "10m",
+					"elevation" : "20m",
+					"slope" : "undulating-to-ruling",
+					"moisture" : "dry",
+					"humidity" : "high"
+				},
+				{
+					"name" : "Section 3",
+					"image" : "./img/map1/sec-3.jpg",
+					"soil_type" : "sandy",
+					"acidity_type" : 3,
+					"acidity_level" : "5m",
+					"elevation" : "10m",
+					"slope" : "rolling-to-moderately-steep",
+					"moisture" : "wet",
+					"humidity" : "very-wet"
+				}
+			]
+		},
+		"manambulan" : {
+			"image" : "./img/map2/map.jpg",
+			"sections" : [
+				{
+					"name" : "Section 1",
+					"image" : "./img/map2/sec-1.jpg",
+					"soil_type" : "chalky",
+					"acidity_type" : "non acidic",
+					"acidity_level" : "14m",
+					"elevation" : "20m",
+					"slope" : "steep",
+					"moisture" : "verywet",
+					"humidity" : "high"
+				},
+				{
+					"name" : "Section 2",
+					"image" : "./img/map2/sec-2.jpg",
+					"soil_type" : "clay",
+					"acidity_type" : "very acidic",
+					"acidity_level" : "20m",
+					"elevation" : "30m",
+					"slope" : "level-to-nearly-level",
+					"moisture" : "wet",
+					"humidity" : "low"
+				},
+				{
+					"name" : "Section 3",
+					"image" : "./img/map2/sec-3.jpg",
+					"soil_type" : "silky",
+					"acidity_type" : "acidic",
+					"acidity_level" : "15m",
+					"elevation" : "40m",
+					"slope" : "gendly-sloping-to-undulating",
+					"moisture" : "dry",
+					"humidity" : "high"
+				},
+				{
+					"name" : "Section 4",
+					"image" : "./img/map2/sec-4.jpg",
+					"soil_type" : "peaty",
+					"acidity_type" : "non acidic",
+					"acidity_level" : "17m",
+					"elevation" : "30m",
+					"slope" : "rolling-to-moderately-steep",
+					"moisture" : "very-dry",
+					"humidity" : "low"
+				}
+			]
+		}
+	},
+	"cebu" : {
+
+	}
+}
