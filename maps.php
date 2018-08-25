@@ -26,7 +26,7 @@
 <body>
 	<div class="maps flex-container">
 		<div class="row">
-			<p>Choose Maps</p>
+			<h3>Choose Maps</h3>
 			<div id="maps" class="clearfix">
 				<div class="clear:both"></div>
 			</div><br /><br /><br />

@@ -16,6 +16,10 @@
     box-shadow: 0px 0px 50px #000;
     margin-bottom: 100px;
 }
+#modal * {
+    color: #333;
+    text-shadow:none;
+}
 
 #modal.loaded {
     opacity: 1;

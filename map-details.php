@@ -4,13 +4,16 @@
 <link rel="stylesheet" href="./css/modal.css" />
 <link rel="stylesheet" href="./css/inputs.css" />
 <style>
+.flex-container {
+	margin: 20px;
+}
 .map-details {
 	display: inline-block;
 	position: relative;
 	overflow: hidden;
 	border-radius: 20px;
 	margin:10px;
-	box-shadow: 0 0 30px;
+	box-shadow: 0 0 30px #000;
 }
 .map-section {
 	position: absolute;

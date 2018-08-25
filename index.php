@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="./css/global.css" />
+<link rel="stylesheet" href="./css/animate.css" />
 <link rel="stylesheet" href="./css/layout.css" />
 <link rel="stylesheet" href="./css/progress.css" />
 <style>
