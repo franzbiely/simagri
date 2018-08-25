@@ -5,9 +5,12 @@
 <link rel="stylesheet" href="./css/inputs.css" />
 <style>
 .map-details {
-	height: 100%;
-	background-repeat: no-repeat;
+	display: inline-block;
 	position: relative;
+	overflow: hidden;
+	border-radius: 20px;
+	margin:10px;
+	box-shadow: 0 0 30px;
 }
 .map-section {
 	position: absolute;
@@ -36,7 +39,9 @@ button {
 }
 </style>
 <body>
-	<div class="map-details"></div>
+	<div class="flex-container">
+		<div class="map-details"></div>
+	</div>
 </body>
 <script src="./js/jquery.js"></script>
 <script src="./js/modal.js"></script>
@@ -48,9 +53,7 @@ let loc = new URL(window.location.href).searchParams.get('loc'),
 // Fetch db
 $.get('./db/location.json', function(data) {
 	let area = data[loc][subloc];
-	$('.map-details').css({
-		backgroundImage : 'url('+area.image+')'
-	})
+	$('.map-details').html('<img src="'+area.image+'" />')
 	Object.values(area.sections).map(function(val) {
 		var ob1 = document.createElement('img');
 			ob1.setAttribute('class','map-section');

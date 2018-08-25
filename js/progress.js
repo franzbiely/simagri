@@ -25,6 +25,8 @@ var ProgressBar = {
 				clearInterval(si);
 			}
 		},500);
-
 	},
+	closeMe : function(){
+		obj1.parentNode.removeChild(obj1);
+	}
 }
