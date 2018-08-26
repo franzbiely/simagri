@@ -101,7 +101,7 @@ $(document).ready(function(){
 				func : function() {
 					setTimeout(function() {
 						key = $(".crop-list").val();
-						tds = ""
+						tds = "<input type='hidden' name='plant' value='+key+'>"
 						$.each( plants[key]["details"], function (index, value){
 							tds += "<tr>"+
 								"<td class='field'>"+index+":</td>";
@@ -111,11 +111,23 @@ $(document).ready(function(){
 									"</tr>";
 								$.each(value, function (i, o){
 
-									tds += "<tr>"+
-										"<td class='field sub'>"+i+":</td>"+
-										"<td>"+o+"</td>"+
-										"<input type='hidden' name='"+ i.replace(" ","_").toLowerCase()+"' value='"+o+"'>"+
-										"</tr>"	;
+									if($.type(o) === "object"){
+										$.each(o, function (a, b){
+											tds += "<tr>"+
+												"<td class='field sub'>"+ a +":</td>"+
+												"<td>"+b+"</td>"+
+												"<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"[\""+a.replace(" ","_").toLowerCase()+"\"]' value='"+b+"'>"+
+												"</tr>"	;
+										});
+									}else{
+										tds += "<tr>"+
+											"<td class='field sub'>"+i+":</td>"+
+											"<td>"+o+"</td>"+
+											"<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"[\""+i.replace(" ","_").toLowerCase()+"\"]' value='"+o+"'>"+
+											"</tr>"	;
+									}
+
+
 								});
 							}else{
 								if(index == "estimated plant count"){
