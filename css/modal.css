@@ -55,15 +55,6 @@
     padding-right: 20px;
 }
 
-.float-left {
-    float: left;
-}
-
-.float-right {
-    float: right;
-    text-align: right;
-}
-
 .modal-body .float-left,
 .modal-body .float-right {
     padding: 10px 20px;
