@@ -12,6 +12,8 @@
                 $calculateCost = new CalculateCosting();
                 $data = $_REQUEST;
                 $cost = $calculateCost->calculate($data);
+                
+                print_r($data);
             ?>
             
         </div>
@@ -41,12 +43,12 @@
             <h4>Fertilizers Cost Breakdown:</h4>
                     
             <table>
-                <?php foreach($data['fertilizers'] as $fertilizer): ?>
-                    <tr><th>Name:</th><td><?php echo $fertilizer['name']; ?></td></tr>
-                    <tr><th>Application:</th><td>Every <?php echo $fertilizer['frequency_span']; ?>&nbsp;Days</td></tr>
+                <?php foreach($data['fertilizer'] as $name=>$fertilizer): ?>
+                    <tr><th>Name:</th><td><?php echo $name; ?></td></tr>
+                    <tr><th>Application:</th><td>Every <?php echo $fertilizer[0]; ?>&nbsp;Days</td></tr>
                     <tr><th></th><td><?php echo $fertilizer['quantity']; ?>&nbsp;Grams</td></tr>
-                    <tr><th>Cost:</th><td>Php&nbsp;<?php echo $cost['fertilizers'][$fertilizer['name']]['total_amount']; ?></td></tr>
-                    <tr><th></th><td><?php echo $cost['fertilizers'][$fertilizer['name']]['total_usage']; ?> Grams @ Php&nbsp;<?php echo $cost['fertilizers'][$fertilizer['name']]['cost_per_gram']; ?> per Gram</td></tr>
+                    <tr><th>Cost:</th><td>Php&nbsp;<?php echo $cost['fertilizers'][$name]['total_amount']; ?></td></tr>
+                    <tr><th></th><td><?php echo $cost['fertilizers'][$name]['total_usage']; ?> Grams @ Php&nbsp;<?php echo $cost['fertilizers'][$name]['cost_per_gram']; ?> per Gram</td></tr>
                 <?php endforeach; ?>
             </table>
         </div>
