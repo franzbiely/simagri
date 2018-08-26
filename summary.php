@@ -55,6 +55,9 @@
             </table>
         </div>
 
+        <div class="row">
+            <button>Apply for Loan</button>
+        </div>
     </div>
 </body>
 <script src="./js/jquery.js"></script>
