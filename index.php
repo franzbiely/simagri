@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="./css/layout.css" />
 <link rel="stylesheet" href="./css/progress.css" />
 <style>
+	body * {
+		color: #333;
+	}
 	.index {
 		background: url(./img/splash.jpg) center;
 		background-size: cover;
@@ -35,6 +38,7 @@
 <script src="./js/progress.js"></script>
 <script src="./js/phase.js"></script>
 <script>
+$('body *').addClass('animated');
 $('button').on('click',function() {
 	var tasks = {
 		1 : {
@@ -53,9 +57,11 @@ $('button').on('click',function() {
 			title : 'Ready',
 			func : function() {
 				setTimeout(function() {
-					Phase.out()
-					window.location.href='./farmer-inputs.php';
+					Phase.out();
 				},1000)			
+				setTimeout(function() {
+					window.location.href='./farmer-inputs.php';
+				}, 1500);
 			}
 		}
 	}
