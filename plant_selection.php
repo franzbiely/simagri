@@ -116,14 +116,14 @@ $(document).ready(function(){
 											tds += "<tr>"+
 												"<td class='field sub'>"+ a +":</td>"+
 												"<td>"+b+"</td>"+
-												"<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"[\""+a.replace(" ","_").toLowerCase()+"\"]' value='"+b+"'>"+
+												"<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"["+a.replace(" ","_").toLowerCase()+"]' value='"+b+"'>"+
 												"</tr>"	;
 										});
 									}else{
 										tds += "<tr>"+
 											"<td class='field sub'>"+i+":</td>"+
 											"<td>"+o+"</td>"+
-											"<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"[\""+i.replace(" ","_").toLowerCase()+"\"]' value='"+o+"'>"+
+											"<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"["+i.replace(" ","_").toLowerCase()+"]' value='"+o+"'>"+
 											"</tr>"	;
 									}
 
