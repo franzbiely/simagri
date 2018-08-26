@@ -18,7 +18,7 @@
         
         <div class="row">
             <div class=""><p>Crop: </p></div>
-            <div class=""><h4><?php echo $data['crop']; ?></h4></div>
+            <div class=""><h4><?php echo $data['plant']; ?></h4></div>
         </div>
         <div class="row">
             <div class=""><p>Estimated Number of Crops: </p></div>
@@ -32,15 +32,7 @@
             <div class=""><p>Estimated Yield Per Production (in Grams): </p></div>
             <div class=""><h4><?php echo $data['estimated_yield_per_tree']['min']*$data['estimated_plant_count']; ?> - <?php echo $data['estimated_yield_per_tree']['max']*$data['estimated_plant_count']; ?></h4></div>
         </div>
-        <div class="row">
-            <div class=""><p>Total Arable Area: </p></div>
-            <div class=""><h4><?php echo $data['arable_area']; ?></h4></div>
-        </div>
-        <div class="row">
-            <div class=""><p>Soil Classification: </p></div>
-            <div class=""><h4><?php echo $data['soil_type']; ?></h4></div>
-        </div>
-
+        
         <div class="row">
             
             <h4>Fertilizers Cost:</h4>
