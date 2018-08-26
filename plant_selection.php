@@ -12,6 +12,10 @@
 <link rel="stylesheet" href="./css/progress.css" />
 <link rel="stylesheet" href="./css/inputs.css" />
 <style>
+	.selection {
+		background: url('./img/bg2.jpg') center;
+		background-size: cover;
+	}
 	h1 {
 		margin-bottom: 0;
 	}
