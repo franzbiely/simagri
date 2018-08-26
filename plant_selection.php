@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./css/global.css" />
 <link rel="stylesheet" href="./css/layout.css" />
 <link rel="stylesheet" href="./css/progress.css" />
+<link rel="stylesheet" href="./css/inputs.css" />
 <style>
 	h1 {
 		margin-bottom: 0;
@@ -26,28 +27,30 @@
 	}
 </style>
 <body>
-	<div class="selection container">
+	<div class="selection container flex-container">
 		<div class="row">
-			<h1>Plant Selection</h1>
-		</div>
-		<div class="info row">
-			<p>Land Area: <span><?php echo $_REQUEST["area_size"] ?> Hectare(s)</span></p>
-			<p>Soil type: <span><?php echo $_REQUEST["soil_type"] ?></span></p>
-		</div>
-		<div class="input-group row">
-			<p>
-				<label for="crop-list">Suggested Crop List</label>
-				<select class="crop-list" id="crop-list">
-					<option>---SELECT---</option>
-				</select>
-			</p>
-		</div>
-		<div class="result row">
-			<form action="./summary.php" id="crop_data">
-				<table class="table crop_data">
-				</table>
-				<input type="submit" value="Create Summary">
-			</form>
+			<div class="box">
+				<h1>Plant Selection</h1>
+				<div class="info row">
+					<p>Land Area: <span><?php echo $_REQUEST["area_size"] ?> Hectare(s)</span></p>
+					<p>Soil type: <span><?php echo $_REQUEST["soil_type"] ?></span></p>
+				</div>
+				<div class="input-group row">
+					<p>
+						<label for="crop-list">Suggested Crop List :</label><br />
+						<select class="crop-list" id="crop-list">
+							<option>---SELECT---</option>
+						</select>
+					</p>
+				</div>
+				<div class="result row">
+					<form action="./summary.php" id="crop_data">
+						<table class="table crop_data">
+						</table>
+						<input type="submit" value="Create Summary">
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>

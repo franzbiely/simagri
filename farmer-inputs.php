@@ -14,6 +14,10 @@
 	box-shadow: 5px 5px 10px #000;
 	padding: 20px;
 }
+.farmer-inputs * {
+	color: #333;
+	text-shadow: none;
+}
 </style>
 <body>
 	<div class="farmer-inputs flex-container">
