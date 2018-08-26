@@ -24,6 +24,12 @@
 }
 .block {
 }
+.link {
+    color:blue;
+}
+.link:hover {
+    text-decoration: none;
+}
 </style>
 <body>
     <div class="summary flex-container">
@@ -82,6 +88,14 @@
                     <hr /><br />
                     <div class="block clearfix" style="text-align: center;">
                         <button style="float:left; line-height: 35px;">Apply for Loan &nbsp;&nbsp;<img style="float:right;" src="./img/unionbank.png" width="150" /></button>
+
+                        <br style="clear:both;" />
+                        <br />
+                        <span>
+                        <img src="./img/da.jpg" style="width:150px; float:left;" /><br />
+                        <a class="link" href="http://www.da.gov.ph/" target="_blank">Visit Department of Agriculture</a>
+                        </span>
+
                         
                     </div>
                 </div>
