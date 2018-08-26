@@ -54,7 +54,7 @@
 				</div>
 				<div class="float-right">
 					<div class="result row">
-						<form action="./summary.php" id="crop_data">
+						<form action="./summary.php" id="crop_data" method="POST">
 							<table class="table crop_data">
 							</table>
 							<input type="submit" value="Create Summary">
