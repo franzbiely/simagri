@@ -1,14 +1,11 @@
 <?php
   class CalculateCosting{
-      public $data; 
-      public function __construct(){
-        $this->data = $this->fetchData();  
-      }
-      
-      public function calculate(){
-          $data = $this->fetchData();
+      public function calculate($data){
+          echo "<pre>";
+          print_r($data);
+          echo "</pre>";
           //process fertilizer
-          $fertilizer_cost = $this->fertilizerCost($this->data['crops_count'], $this->data['days_to_harvest'], $this->data['fertilizers']);    
+          $fertilizer_cost = $this->fertilizerCost($data['estimated_plant_count'], $data['days_to_harvest'], $data['fertilizers']);    
           
           return array(
             "fertilizers" => $fertilizer_cost
@@ -35,10 +32,12 @@
           return $returns;
       }
       
+      /*
       public function fetchData(){
         $file = "db/summary.json";
         return json_decode(file_get_contents($file), TRUE);    
       }
+      */
       
       public function fetchFertilizer($name){
         $file = "db/fertilizers.json";

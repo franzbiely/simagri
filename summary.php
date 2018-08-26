@@ -10,8 +10,8 @@
             <?php 
                 require_once("CalculateCosting.php");
                 $calculateCost = new CalculateCosting();
-                $data = $calculateCost->data;
-                $cost = $calculateCost->calculate();
+                $data = $_REQUEST;
+                $cost = $calculateCost->calculate($data);
             ?>
             
         </div>
