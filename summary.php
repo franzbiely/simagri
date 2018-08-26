@@ -92,4 +92,6 @@ $('button').on('click',function() {
     }
     ProgressBar.render(tasks)
 })
+
+    console.log(JSON.parse(localStorage.getItem('plantInfo')));
 </script>

@@ -43,7 +43,7 @@
 			</p>
 		</div>
 		<div class="result row">
-			<form action="./summary.php">
+			<form action="./summary.php" id="crop_data">
 				<table class="table crop_data">
 				</table>
 				<input type="submit" value="Create Summary">
@@ -129,6 +129,12 @@ $(document).ready(function(){
 			}
 		}
 		ProgressBar.render(tasks)
+
+	});
+
+	$("#crop_data").on("submit", function(e){
+		localStorage.setItem('plantInfo', JSON.stringify($(this).serializeArray()) );
+
 
 	});
 });
