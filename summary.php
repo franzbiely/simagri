@@ -13,7 +13,7 @@
                 $data = $_REQUEST;
                 $cost = $calculateCost->calculate($data);
                 
-                print_r($data);
+                //print_r($data);
             ?>
             
         </div>
