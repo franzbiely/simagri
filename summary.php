@@ -43,10 +43,12 @@
             <h4>Fertilizers Cost Breakdown:</h4>
                     
             <table>
-                <?php foreach($data['fertilizer'] as $name=>$fertilizer): ?>
+                <?php foreach($data['fertilizer'] as $name=>$fertilizer): 
+                $fertilizer = explode(",",$fertilizer);
+                ?>
                     <tr><th>Name:</th><td><?php echo $name; ?></td></tr>
                     <tr><th>Application:</th><td>Every <?php echo $fertilizer[0]; ?>&nbsp;Days</td></tr>
-                    <tr><th></th><td><?php echo $fertilizer['quantity']; ?>&nbsp;Grams</td></tr>
+                    <tr><th></th><td><?php echo $fertilizer[1]; ?>&nbsp;Grams</td></tr>
                     <tr><th>Cost:</th><td>Php&nbsp;<?php echo $cost['fertilizers'][$name]['total_amount']; ?></td></tr>
                     <tr><th></th><td><?php echo $cost['fertilizers'][$name]['total_usage']; ?> Grams @ Php&nbsp;<?php echo $cost['fertilizers'][$name]['cost_per_gram']; ?> per Gram</td></tr>
                 <?php endforeach; ?>
