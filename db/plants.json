@@ -17,10 +17,10 @@
       },
       "fertilizer":{
         "growing":{
-          "urea":"30"
+          "urea":["30","5"]
         },
         "flower inducing":{
-          "complete":"30"
+          "complete":["30","5"]
         }
       },
       "fruit management":"Insecticide and Fungicide"
@@ -43,7 +43,7 @@
       },
       "fertilizer":{
         "growing":{
-          "urea":"30"
+          "urea":["30","5"]
         }
       },
       "fruit management":"Insecticide and Fungicide"
