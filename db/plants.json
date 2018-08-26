@@ -7,10 +7,7 @@
       "Planting season": "Anytime",
       "spacing":"10m - 15m",
       "estimated plant count": "x / 100",
-      "Fruit Bearing Age":{
-        "Chemical assisted": 1824,
-        "Organic": 2554
-      },
+      "Production Age":2554
       "estimated_yield_per_tree":{
         "min":150000,
         "max":200000
