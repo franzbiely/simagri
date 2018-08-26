@@ -21,16 +21,16 @@
             <div class=""><h4><?php echo $data['crop']; ?></h4></div>
         </div>
         <div class="row">
-            <div class=""><p>Yield: </p></div>
-            <div class=""><h4><?php echo $data['yield']; ?></h4></div>
+            <div class=""><p>Estimated Number of Crops: </p></div>
+            <div class=""><h4><?php echo $data['estimated_plant_count']; ?></h4></div>
         </div>
         <div class="row">
-            <div class=""><p>Total Arable Area: </p></div>
-            <div class=""><h4><?php echo $data['arable_area']; ?></h4></div>
+            <div class=""><p>Production Age (in days): </p></div>
+            <div class=""><h4><?php echo $data['production_age']; ?></h4></div>
         </div>
         <div class="row">
-            <div class=""><p>Number of Crops: </p></div>
-            <div class=""><h4><?php echo $data['crops_count']; ?></h4></div>
+            <div class=""><p>Estimated Yield Per Production (in Grams): </p></div>
+            <div class=""><h4><?php echo $data['estimated_yield_per_tree']['min']*$data['estimated_plant_count']; ?> - <?php echo $data['estimated_yield_per_tree']['max']*$data['estimated_plant_count']; ?></h4></div>
         </div>
         <div class="row">
             <div class=""><p>Total Arable Area: </p></div>

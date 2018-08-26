@@ -5,7 +5,7 @@
           print_r($data);
           echo "</pre>";
           //process fertilizer
-          $fertilizer_cost = $this->fertilizerCost($data['estimated_plant_count'], $data['days_to_harvest'], $data['fertilizers']);    
+          $fertilizer_cost = $this->fertilizerCost($data['estimated_plant_count'], $data['production_age'], $data['fertilizers']);    
           
           return array(
             "fertilizers" => $fertilizer_cost
