@@ -81,7 +81,7 @@
                                 <tr><th>Application:</th><td>Every <?php echo $fertilizer[0]; ?>&nbsp;Days</td></tr>
                                 <tr><th></th><td><?php echo $fertilizer[1]; ?>&nbsp;Grams</td></tr>
                                 <tr><th>Cost:</th><td>Php&nbsp;<?php echo round($cost['fertilizers'][$name]['total_amount'],2 ); ?></td></tr>
-                                <tr><th></th><td><?php echo round($cost['fertilizers'][$name]['total_usage'],2); ?> Grams @ Php&nbsp;<?php echo round($cost['fertilizers'][$name]['cost_per_gram'],2); ?> per Gram</td></tr>
+                                <tr><th></th><td><?php echo number_format($cost['fertilizers'][$name]['total_usage'],2,".",","); ?> Grams @ Php&nbsp;<?php echo number_format($cost['fertilizers'][$name]['cost_per_gram'],2,".",","); ?> per Gram</td></tr>
                             <?php endforeach; ?>
                         </table>
                     </div><br />
