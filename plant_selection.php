@@ -101,7 +101,7 @@ $(document).ready(function(){
 				func : function() {
 					setTimeout(function() {
 						key = $(".crop-list").val();
-						tds = "<input type='hidden' name='plant' value='+key+'>"
+						tds = "<input type='hidden' name='plant' value='"+key+"'>"
 						$.each( plants[key]["details"], function (index, value){
 							tds += "<tr>"+
 								"<td class='field'>"+index+":</td>";
