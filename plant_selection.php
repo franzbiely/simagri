@@ -109,13 +109,14 @@ $(document).ready(function(){
 							}else{
 								if(index == "estimated plant count"){
 									tds +=	"<td><span class='value'>"+eval(value)+"</span>";
+									tds +="<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"' value='"+eval(value)+"'></td>"+
+										"</tr>";
 								}
 								else{
 									tds +=	"<td><span class='value'>"+value+"</span>";
+									tds +="<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"' value='"+value+"'></td>"+
+										"</tr>";
 								}
-
-							tds +="<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"' value='"+value+"'></td>"+
-								"</tr>";
 
 
 							}
