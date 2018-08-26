@@ -1,9 +1,10 @@
 var Phase = {
-	out : function() {
+	out : function(to) {
 		var animation = ['fadeOutUp','fadeOutDown','fadeOut'];
+
 		$('body *').addClass(animation[Math.floor(Math.random()*animation.length)]);
 		setTimeout(function() {
-			$('.out').remove()
-		},1500)
+			$(document).find('.animated').remove();
+		},1000)
 	}
 }

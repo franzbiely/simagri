@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="./css/global.css" />
 <link rel="stylesheet" href="./css/layout.css" />
+<link rel="stylesheet" href="./css/animate.css" />
 <link rel="stylesheet" href="./css/inputs.css" />
 <link rel="stylesheet" href="./css/progress.css" />
 <style>
@@ -38,6 +39,7 @@
 <script src="./js/progress.js"></script>
 <script src="./js/phase.js"></script>
 <script>
+$('body *').addClass('animated');
 let _data;
 let selected_area;;
 $.get('./db/location.json', function(data) {
@@ -69,9 +71,11 @@ $('button').on('click',function() {
 				}
 				else {
 					setTimeout(function() {
-						// Phase.out()
+						Phase.out();
+					},1000)			
+					setTimeout(function() {
 						window.location.href='./maps.php?loc='+$('select').find(":selected").val();
-					},1000)				
+					}, 1500);		
 				}
 				
 			}

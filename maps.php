@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="./css/global.css" />
 <link rel="stylesheet" href="./css/layout.css" />
+<link rel="stylesheet" href="./css/animate.css" />
 <style>
 	#maps {
 		
@@ -35,7 +36,9 @@
 	</div>
 </body>
 <script src="./js/jquery.js"></script>
+<script src="./js/phase.js"></script>
 <script>
+$('body *').addClass('animated');
 let loc;
 $.get('./db/location.json', function(data) {
 	loc = new URL(window.location.href).searchParams.get('loc');
@@ -46,6 +49,12 @@ $.get('./db/location.json', function(data) {
 })
 
 $(document).on('click','.map',function() {
-	window.location.href='./map-details.php?loc='+loc+'&subloc='+$(this).attr('data');
+	var that = this;
+	setTimeout(function() {
+		Phase.out();
+	},1000)			
+	setTimeout(function() {
+		window.location.href='./map-details.php?loc='+loc+'&subloc='+$(that).attr('data');
+	}, 1500);
 });
 </script>

@@ -19,6 +19,9 @@
 	h1 {
 		margin-bottom: 0;
 	}
+	table {
+		margin-bottom: 30px !important;
+	}
 	p {
     text-shadow: 1px 1px 0px #fff;
 	}
@@ -33,26 +36,30 @@
 <body>
 	<div class="selection container flex-container">
 		<div class="row">
-			<div class="box">
-				<h1>Plant Selection</h1>
-				<div class="info row">
-					<p>Land Area: <span><?php echo $_REQUEST["area_size"] ?> Hectare(s)</span></p>
-					<p>Soil type: <span><?php echo $_REQUEST["soil_type"] ?></span></p>
+			<div class="box clearfix">
+				<div class="float-left">
+					<h1>Plant Selection</h1>
+					<div class="info row">
+						<p>Land Area: <span><?php echo $_REQUEST["area_size"] ?> Hectare(s)</span></p>
+						<p>Soil type: <span><?php echo $_REQUEST["soil_type"] ?></span></p>
+					</div>
+					<div class="input-group row">
+						<p>
+							<label for="crop-list">Suggested Crop List :</label><br />
+							<select class="crop-list" id="crop-list">
+								<option>---SELECT---</option>
+							</select>
+						</p>
+					</div>
 				</div>
-				<div class="input-group row">
-					<p>
-						<label for="crop-list">Suggested Crop List :</label><br />
-						<select class="crop-list" id="crop-list">
-							<option>---SELECT---</option>
-						</select>
-					</p>
-				</div>
-				<div class="result row">
-					<form action="./summary.php" id="crop_data">
-						<table class="table crop_data">
-						</table>
-						<input type="submit" value="Create Summary">
-					</form>
+				<div class="float-right">
+					<div class="result row">
+						<form action="./summary.php" id="crop_data">
+							<table class="table crop_data">
+							</table>
+							<input type="submit" value="Create Summary">
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -94,7 +101,7 @@ $(document).ready(function(){
 				func : function() {
 					setTimeout(function() {
 						key = $(".crop-list").val();
-						tds = ""
+						tds = "<input type='hidden' name='plant' value='+key+'>"
 						$.each( plants[key]["details"], function (index, value){
 							tds += "<tr>"+
 								"<td class='field'>"+index+":</td>";
@@ -104,11 +111,23 @@ $(document).ready(function(){
 									"</tr>";
 								$.each(value, function (i, o){
 
-									tds += "<tr>"+
-										"<td class='field sub'>"+i+":</td>"+
-										"<td>"+o+"</td>"+
-										"<input type='hidden' name='"+ i.replace(" ","_").toLowerCase()+"' value='"+o+"'>"+
-										"</tr>"	;
+									if($.type(o) === "object"){
+										$.each(o, function (a, b){
+											tds += "<tr>"+
+												"<td class='field sub'>"+ a +":</td>"+
+												"<td>"+b+"</td>"+
+												"<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"[\""+a.replace(" ","_").toLowerCase()+"\"]' value='"+b+"'>"+
+												"</tr>"	;
+										});
+									}else{
+										tds += "<tr>"+
+											"<td class='field sub'>"+i+":</td>"+
+											"<td>"+o+"</td>"+
+											"<input type='hidden' name='"+ index.replace(" ","_").toLowerCase()+"[\""+i.replace(" ","_").toLowerCase()+"\"]' value='"+o+"'>"+
+											"</tr>"	;
+									}
+
+
 								});
 							}else{
 								if(index == "estimated plant count"){
@@ -132,7 +151,7 @@ $(document).ready(function(){
 
 						$(".result").stop().fadeOut("slow").fadeIn("slow");
 					},1000)
-					Phase.out();
+					// Phase.out();
 				}
 			}
 		}
